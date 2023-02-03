@@ -1,0 +1,36 @@
+{
+  "configuration": {
+    "kerfSize": 0.125
+  },
+  "cabinets": [
+    {
+      "id": "B1",
+      "name": "base-24-34.5-23.75",
+      "kind": "base",
+      "width": 24,
+      "height": 34.5,
+      "depth": 23.75
+    }
+  ],
+  "cuts": [
+    {
+      "cabinetRef": "base-24-34.5-23.75",
+      "x": 24,
+      "y": 30.5
+    }
+  ],
+  "panels": [
+    {
+      "id": "P1",
+      "layout": [
+        {
+          "cabinet_id": "B1",
+          "x": 24,
+          "y": 30.5,
+          "posX": 0,
+          "posY": 0
+        }
+      ]
+    }
+  ]
+}

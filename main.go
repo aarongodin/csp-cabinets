@@ -1,20 +1,21 @@
 package main
 
 import (
-	"fmt"
+	"os"
 
-	"github.com/spf13/cobra"
+	"github.com/davecgh/go-spew/spew"
 )
 
 func main() {
-	var rootCmd = &cobra.Command{
-		Use: "rlp",
-		Run: func(cmd *cobra.Command, args []string) {
-			fmt.Println("ok")
-		},
+	raw, err := os.ReadFile("./inputs/kitchen-cabinets.json")
+	if err != nil {
+		panic(err)
 	}
 
-	rootCmd.AddCommand(calculateCabinets)
+	res, err := ProcessCabinets(raw)
+	if err != nil {
+		panic(err)
+	}
 
-	rootCmd.Execute()
+	spew.Dump(res)
 }
